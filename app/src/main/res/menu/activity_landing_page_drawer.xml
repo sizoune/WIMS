@@ -1,9 +1,11 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 <group android:checkableBehavior="single">
     <item
         android:id="@+id/nav_beranda"
-
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:title="Beranda "/>
     <item
         android:id="@+id/nav_pesan"
@@ -17,6 +19,7 @@
         android:id="@+id/nav_donasi"
 
         android:title="Donasi" />
+
 </group>
 
 

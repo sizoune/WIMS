@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:label="Makassar90s"
+        android:label="WIMS"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
