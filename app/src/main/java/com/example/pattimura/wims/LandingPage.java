@@ -1,5 +1,6 @@
 package com.example.pattimura.wims;
 
+import android.graphics.Typeface;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -18,10 +19,15 @@ public class LandingPage extends AppCompatActivity
 
         Fragment fragment;
         TextView judul;
+        Typeface face;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/sfns.ttf");
+            FontsOverride.setDefaultFont(this, "MONOSPACE", "fonts/sfns.ttf");
+            FontsOverride.setDefaultFont(this, "SERIF", "fonts/sfns.ttf");
+            FontsOverride.setDefaultFont(this, "SANS_SERIF", "fonts/sfns.ttf");
             setContentView(R.layout.activity_landing_page);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
@@ -33,8 +39,7 @@ public class LandingPage extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-            judul = (TextView) toolbar.findViewById(R.id.toolbar_title);
-            judul.setText("Pesan");
+
 
 
             fragment = new PesanFragment();
@@ -43,29 +48,6 @@ public class LandingPage extends AppCompatActivity
             ft.commit();
 
 
-
-
-//        Picasso.with(this)
-//                .load(R.drawable.bgnavigasi)
-//                .into(new Target() {
-//                          @Override
-//                          public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-//                              relativeLayout.setBackground(new BitmapDrawable(getApplicationContext().getResources(), bitmap));
-//
-//                          }
-//
-//                          @Override
-//                          public void onBitmapFailed(Drawable errorDrawable) {
-//                              Log.d("TAG", "FAILED");
-//                          }
-//
-//                          @Override
-//                          public void onPrepareLoad(Drawable placeHolderDrawable) {
-//                              Log.d("TAG", "FAILED");
-//                          }
-//                      });
-            //ImageView tes = (ImageView) navigationView.findViewById(R.id.bgnav);
-            //Picasso.with(this).load(R.drawable.bgnavigasi).fit().centerCrop().into(tes);
         }
 
         @Override
@@ -105,18 +87,21 @@ public class LandingPage extends AppCompatActivity
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.mainframe, fragment);
                 judul.setText("Beranda");
+                judul.setTypeface(face);
                 ft.commit();
             } else if (id == R.id.nav_pesan) {
                 fragment = new PesanFragment();
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.mainframe, fragment);
                 judul.setText("Pesan");
+                judul.setTypeface(face);
                 ft.commit();
             } else if (id == R.id.nav_timeline) {
                 fragment = new PesanFragment();
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.mainframe, fragment);
                 judul.setText("Timeline");
+                judul.setTypeface(face);
                 ft.commit();
             }
 

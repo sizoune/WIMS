@@ -59,6 +59,9 @@ public class PesanFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position != daftarChat.size()) {
                     ListChat b = daftarChat.get(position);
+                    Intent i = new Intent(PesanFragment.this.getContext(), PesanPersonal.class);
+                    i.putExtra("namauser", b.getDisplayName());
+                    startActivity(i);
                     //Toast.makeText(BandListFragment.this.getContext(), b.getDesc(), Toast.LENGTH_SHORT).show();
                     /*Intent i = new Intent(PesanFragment.this.getContext(), DetailBand.class);
                     i.putExtra("namaband", b.getName());

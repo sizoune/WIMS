@@ -32,7 +32,7 @@ public class SplashScreen extends AppCompatActivity {
             }, 3000);
             splashLoaded = true;
         }else {
-            Intent goToMainActivity = new Intent(SplashScreen.this, LandingPage.class);
+            Intent goToMainActivity = new Intent(SplashScreen.this, HalamanLogin.class);
             goToMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivity(goToMainActivity);
             finish();
