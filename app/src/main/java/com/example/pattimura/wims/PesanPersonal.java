@@ -3,10 +3,12 @@ package com.example.pattimura.wims;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.pattimura.wims.Adapter.AdapterChatPersonal;
 import com.example.pattimura.wims.Model.ChatPersonal;
@@ -33,7 +35,7 @@ public class PesanPersonal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesan_personal);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button fab = (Button) findViewById(R.id.btnSend);
         pesan = (EditText) findViewById(R.id.input);
@@ -49,6 +51,10 @@ public class PesanPersonal extends AppCompatActivity {
         if (b != null) {;
             nama = (String) b.get("namauser");
         }
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarpm);
+        TextView judul = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        judul.setText(nama);
 
         /*database.getReference("chat").addValueEventListener(new ValueEventListener() {
             @Override

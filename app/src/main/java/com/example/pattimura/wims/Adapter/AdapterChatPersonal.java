@@ -6,10 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.pattimura.wims.Model.ChatPersonal;
+import com.example.pattimura.wims.R;
 
 import java.util.ArrayList;
 
@@ -49,7 +49,12 @@ public class AdapterChatPersonal extends BaseAdapter {
         View v = view;
         ChatPersonal chat = cp.get(i);
         if (v == null) {
-            
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = inflater.inflate(R.layout.adapter_sender, viewGroup, false);
+            TextView isi = (TextView) v.findViewById(R.id.message_text);
+            TextView time = (TextView) v.findViewById(R.id.message_time);
+            isi.setText(chat.getMessage());
+            time.setText(DateFormat.format("(HH:mm:ss)", chat.getWaktu()));
             /*mStorageRef = FirebaseStorage.getInstance().getReference();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             if (chat.getId().equals(user.getUid())) {

@@ -39,10 +39,7 @@ public class LandingPage extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-            judul = (TextView) toolbar.findViewById(R.id.toolbar_title);
-            judul.setText("Pesan");
-            face = Typeface.createFromAsset(getAssets(),
-                    "fonts/sfns.ttf");
+
 
 
             fragment = new PesanFragment();

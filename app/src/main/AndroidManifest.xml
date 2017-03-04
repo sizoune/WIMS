@@ -23,6 +23,7 @@
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PesanPersonal"></activity>
+        <activity android:name=".HalamanLogin"></activity>
 
     </application>
 
